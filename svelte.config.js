@@ -8,6 +8,8 @@ import github from "remark-github";
 
 import { mdsvex } from "mdsvex";
 
+import { vercel } from "@sveltejs/adapter-vercel";
+
 /** @type {import("@sveltejs/kit").Config} */
 const config = {
 	extensions: [".svelte", ".md", ".svx"],
@@ -24,7 +26,8 @@ const config = {
 		})
 	],
 	kit: {
-		target: "body"
+		target: "body",
+        adapter: vercel()
 	}
 };
 
