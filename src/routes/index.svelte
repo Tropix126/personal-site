@@ -18,10 +18,6 @@
         {
             name: "About",
             element: null
-        },
-        {
-            name: "Technologies",
-            element: null
         }
     ];
     let selection;
@@ -95,9 +91,6 @@
     <section id="about" bind:this={sections[2].element}>
         <h1>Hey there.</h1>
         <p>Thanks for checking out my site! I'm a US-located hobbyist web developer and designer who specializes in open source stuff. If you're interested in any of my projects, a star would be greatly appreciated. You can find my socials below.</p>
-    </section>
-    <section id="technologies" bind:this={sections[3].element}>
-        hi
     </section>
 </main>
 
