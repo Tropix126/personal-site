@@ -20,7 +20,7 @@
             element: null
         },
         {
-            name: "Socials",
+            name: "Technologies",
             element: null
         }
     ];
@@ -92,8 +92,11 @@
             </ProjectCard>
         </div>
     </section>
-    <section id="about" bind:this={sections[2].element}></section>
-    <section id="socials" bind:this={sections[3].element}>
+    <section id="about" bind:this={sections[2].element}>
+        <h1>Hey there.</h1>
+        <p>Thanks for checking out my site! I'm a US-located hobbyist web developer and designer who specializes in open source stuff. If you're interested in any of my projects, a star would be greatly appreciated. You can find my socials below.</p>
+    </section>
+    <section id="technologies" bind:this={sections[3].element}>
         hi
     </section>
 </main>
@@ -222,6 +225,19 @@
             align-items: center;
             justify-content: center;
             background: var(--waves-1) center/cover no-repeat fixed;
+            h1 {
+                filter: saturate(2);
+                position: fixed;
+                display: flex;
+                align-items: center;
+                margin: 0;
+                line-height: 1;
+                letter-spacing: 1vw;
+                text-transform: uppercase;
+                font-size: clamp(40px, 8vw, 240px);
+                font-weight: 800;
+                user-select: none;
+            }
         }
         &#projects {
             display: flex;
@@ -265,6 +281,40 @@
                 }
             }
         }
+        &#about {
+            text-align: left;
+            padding: 8vh;
+            position: relative;
+            contain: layout;
+            overflow: hidden;
+            background-color: #1a1a1a;
+            &::before {
+                content: "";
+                position: absolute;
+                inset-inline-start: 50%;
+                inset-block-start: 50%;
+                transform: translate(-50%, -50%) rotate(30deg) scale(1.5);
+                inline-size: 100vw;
+                block-size: 100vw;
+                background-color: #252525;
+                z-index: -1;
+                mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='50' cy='50' r='10'/%3E%3C/svg%3E") center/18px;
+            }
+            h1 {
+                font-size: clamp(40px, 14vh, 240px);
+                font-weight: 800;
+                margin: 0;
+                color: var(--accent);
+                text-transform: none;
+                letter-spacing: normal;
+            }
+            p {
+                color: #cecece;
+                line-height: 2;
+                max-width: 48ch;
+                font-size: clamp(16px, 3.6vh, 48px);
+            }
+        }
     }
 
     .projects-container {
@@ -276,20 +326,6 @@
         @media screen and (max-width: 758px) {
             grid-template-columns: auto;
         }
-    }
-
-    h1 {
-        filter: saturate(2);
-        position: fixed;
-        display: flex;
-        align-items: center;
-        margin: 0;
-        line-height: 1;
-        letter-spacing: 1vw;
-        text-transform: uppercase;
-        font-size: clamp(40px, 8vw, 240px);
-        font-weight: 800;
-        user-select: none;
     }
 
     .character-wrapper {

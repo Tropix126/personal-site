@@ -50,7 +50,7 @@
 
         ::selection {
             background-color: var(--accent);
-            color: #fff;
+            color: #000;
         }
     }
 
