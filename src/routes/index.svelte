@@ -88,10 +88,10 @@
             </ProjectCard>
         </div>
     </section>
-    <section id="about" bind:this={sections[2].element}>
+<!--     <section id="about" bind:this={sections[2].element}>
         <h1>Hey there.</h1>
         <p>Thanks for checking out my site! I'm a US-located hobbyist web developer and designer who specializes in open source stuff. If you're interested in any of my projects, a star would be greatly appreciated. You can find my socials below.</p>
-    </section>
+    </section> -->
 </main>
 
 <style lang="scss">
