@@ -15,10 +15,10 @@
             name: "Projects",
             element: null
         },
-        {
-            name: "About",
-            element: null
-        }
+//         {
+//             name: "About",
+//             element: null
+//         }
     ];
     let selection;
 
