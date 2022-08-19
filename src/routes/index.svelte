@@ -86,6 +86,12 @@
             <ProjectCard title="Svelte Codesandbox" href="https://github.com/tropix126/svelte-codesandbox">
                 A powerful Svelte wrapper component around the CodeSandbox editor embed.
             </ProjectCard>
+            <ProjectCard title="Kernel.fish" href="https://kernel.fish">
+                Landing page and docs for Kernel, a universal mod loader and injector for electron-based desktop applications.
+            </ProjectCard>
+            <ProjectCard title="ModernFlyouts Homepage" href="https://modernflyouts-community.github.io/">
+                A simple download and informational page for ModernFlyouts, an open-source replacement for some flyouts in Windows 10 and 11.
+            </ProjectCard>
         </div>
     </section>
 <!--     <section id="about" bind:this={sections[2].element}>
