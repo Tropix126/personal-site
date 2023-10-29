@@ -68,6 +68,12 @@
             <ProjectCard title="files.community" href="https://files.community/">
                 The starting page for everything related to Files, the modern Windows file explorer.
             </ProjectCard>
+            <ProjectCard title="taolib" href="https://taolib.vercel.app/">
+                A library for creating complex autonomous routines on VEX V5 robots.
+            </ProjectCard>
+            <ProjectCard title="vexnav" href="https://github.com/tropix126/vexnav/">
+                Autonomous navigation library for VEX robots in Rust.
+            </ProjectCard>
             <ProjectCard title="Slate" href="https://slate-theme.netlify.app/">
                 An optimized, consistent, and functional theme for @discord based on GitHub's design language.
             </ProjectCard>
