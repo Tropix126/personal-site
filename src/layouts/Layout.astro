@@ -1,0 +1,179 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+
+import Navigation from "components/Navigation.astro";
+
+interface Props {
+	name: string;
+	title: string;
+	description: string;
+	banner?: Banner;
+}
+
+export interface Banner {
+	url: string;
+	width: number;
+	height: number;
+	alt: string;
+	twitter_card: string;
+}
+
+const {
+	name,
+	title,
+	description,
+	banner,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- You know the drill... -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- SEO Stuff -->
+		<link rel="canonical" href={Astro.url} />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Favicon & Page Theme -->
+		<link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
+		<meta name="color-scheme" content="dark" />
+		<meta name="theme-color" content="#e54643" />
+
+		<!-- Preload Fonts -->
+		<link
+			rel="preload"
+			href="/fonts/Manrope-VariableFont_wght.woff2"
+			as="font"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			href="/fonts/iosevka-fixed_latin-ext.woff2"
+			as="font"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			href="/fonts/iosevka-fixed-extralight_latin-ext.woff2"
+			as="font"
+			crossorigin="anonymous"
+		/>
+
+		<!-- OpenGraph Page Metadata -->
+		<meta property="og:site_name" content={name} />
+		<meta property="og:title" content={title} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:description" content={description} />
+
+		{
+			banner && (
+				<>
+					<meta
+						property="og:image"
+						content={new URL(banner.url, Astro.url)}
+					/>
+					<meta property="og:image:type" content="image/png" />
+					<meta property="og:image:alt" content={banner.alt} />
+					<meta
+						property="og:image:width"
+						content={banner.width.toString()}
+					/>
+					<meta
+						property="og:image:height"
+						content={banner.height.toString()}
+					/>
+					<meta
+						property="twitter:card"
+						content={banner.twitter_card}
+					/>
+				</>
+			)
+		}
+
+		<ViewTransitions />
+
+		<title>{title}</title>
+	</head>
+
+	<body>
+		<Navigation />
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+	:root {
+		--base-hue: 23deg;
+		
+		--background-primary: var(--base-hue), 8%, 6%;
+		--background-secondary: var(--base-hue), 6%, 10%;
+		--background-tertiary: var(--base-hue), 6%, 16%;
+		
+		--foreground-primary: var(--base-hue), 45%, 100%;
+		--foreground-secondary: var(--base-hue), 45%, 79%;
+		
+		--accent-primary: var(--base-hue), 85%, 59%;
+		
+		--font-display: "Instrument Sans", system-ui, sans-serif;
+		--font-monospace: "IBM Plex Mono", monospace;
+	}
+
+	@keyframes slide {
+        from {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        to {
+            opacity: 1;
+        }
+    }
+	
+	html {
+		color-scheme: dark;
+		scrollbar-color: hsla(var(--foreground-secondary), 0.5) hsl(var(--background-secondary));
+		font-family: var(--font-monospace);
+		font-size: 62.5%;
+		height: 100%;
+		background: hsl(var(--background-primary)) url("flowers.png") center/cover no-repeat;
+		color: hsl(var(--foreground-primary));
+	}
+
+	html::before {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url("noise.png");
+		image-rendering: pixelated;
+		opacity: 0.02;
+		z-index: -1;
+	}
+	
+	body {
+		margin: 0;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	*,
+	*::before,
+	*::after {
+		scrollbar-width: thin;
+		box-sizing: border-box;
+	}
+
+	::selection {
+		background-color: hsla(var(--foreground-secondary), 0.75);
+		color: hsl(var(--background-primary));
+	}
+</style>

@@ -1,0 +1,58 @@
+<nav>
+    <ul>
+        <li class="active">
+            <a>
+                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.95354 5.3155C7.71151 6.46819 8.68843 8.40843 9.28759 9.96915C9.39488 10.2488 9.68505 10.3628 9.8492 10.1134C10.5568 9.03815 11.1223 5.85028 7.8756 4.29613C8.44786 4.09306 10.2138 4.31261 11.5453 5.80922C11.7148 5.99969 12.0196 5.91489 11.999 5.65877C11.856 3.88146 10.3218 1.49946 7.10444 3.01179C7.2811 2.14541 6.9603 0.41915 4.75809 0.00480613C4.51566 -0.0408102 4.36413 0.248164 4.50609 0.453324C4.8699 0.979039 5.31258 1.75344 5.43944 2.548C4.70169 1.89691 2.79313 1.3469 0.522365 3.61518C0.304126 3.83316 0.578846 4.20244 0.866445 4.0967C1.80418 3.75196 2.97646 3.48659 3.91465 3.72531C2.78766 3.6013 0.866645 4.27197 0.0145319 6.80244C-0.0831815 7.09259 0.3358 7.30044 0.556622 7.0917C1.14401 6.5364 1.95961 5.96216 2.91565 5.72317C2.57425 6.33387 2.46644 8.54817 3.34649 10.3105C3.46436 10.5466 3.78559 10.4658 3.81749 10.203C4.0325 8.43304 4.55643 5.9669 5.50033 4.99648C4.96497 7.02573 5.01029 9.72423 5.59637 13.7561C5.61667 13.8957 5.73472 14 5.87339 14H7.32026C7.5141 14 7.64968 13.8062 7.58624 13.6198C7.02936 11.9837 6.04673 8.65481 6.95354 5.3155Z" fill="#EF823F"/>
+                </svg>
+                TROPICAL
+            </a>
+        </li>
+        <li>
+            <a href="https://tropical.nekoweb.org/">other site</a>
+        </li>
+    </ul>
+</nav>
+
+<style>
+    nav {
+        flex: 0 0 auto;
+        inline-size: 100%;
+        block-size: 32px;
+        border-block-end: 1px solid hsl(var(--background-tertiary));
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+    }
+
+    nav li a {
+        border-inline-end: 1px solid hsl(var(--background-secondary));
+        color: hsl(var(--foreground-secondary));
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        height: 100%;
+        font-size: 1.2rem;
+        padding-inline: 20px;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    nav li a:focus {
+        outline: 1px dotted hsla(var(--foreground-secondary), 0.5);
+        outline-offset: -4px;
+    }
+
+    nav li.active a {
+        color: hsl(var(--foreground-primary));
+    }
+
+    nav li a:hover {
+        color: hsl(var(--foreground-primary));
+    }
+</style>

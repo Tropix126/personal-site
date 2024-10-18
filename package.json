@@ -1,34 +1,18 @@
 {
   "name": "personal-site",
+  "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "package": "svelte-kit package",
-    "preview": "svelte-kit preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
-    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "devDependencies": {
-    "@fec/remark-a11y-emoji": "^3.1.0",
-    "@sveltejs/adapter-auto": "next",
-    "@sveltejs/adapter-vercel": "^1.0.0-next.36",
-    "@sveltejs/kit": "next",
-    "autoprefixer": "^10.4.2",
-    "cssnano": "^5.0.15",
-    "mdsvex": "^0.9.8",
-    "prettier": "^2.4.1",
-    "prettier-plugin-svelte": "^2.4.0",
-    "rehype-slug": "^5.0.1",
-    "remark-github": "^11.2.2",
-    "sass": "^1.48.0",
-    "svelte": "^3.44.0",
-    "svelte-check": "^2.2.6",
-    "svelte-preprocess": "^4.9.4",
-    "tslib": "^2.3.1",
-    "typescript": "^4.4.3"
+  "dependencies": {
+    "astro": "^4.16.2",
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.6.3"
   },
-  "type": "module"
+  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
 }
